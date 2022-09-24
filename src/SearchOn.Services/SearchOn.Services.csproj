@@ -7,7 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Implementations\" />
+    <ProjectReference Include="..\SearchOn.Contracts\SearchOn.Contracts.csproj" />
+    <ProjectReference Include="..\SearchOn.Models\SearchOn.Models.csproj" />
   </ItemGroup>
 
 </Project>
