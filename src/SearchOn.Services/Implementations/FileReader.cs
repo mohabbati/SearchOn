@@ -12,6 +12,11 @@ public class FileReader<TModel> : IFileReader<TModel>
 
     public async Task<TModel> ReadFileAsync(string filePath, CancellationToken cancellationToken)
     {
+        var isFileExist = File.Exists(filePath);
+
+        if (isFileExist is false)
+            throw new LogicException(filePath); 
+        
         using StreamReader file = File.OpenText(filePath);
 
         var json = await file.ReadToEndAsync();
