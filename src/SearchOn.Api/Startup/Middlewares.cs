@@ -1,7 +1,4 @@
-﻿using SearchOn.Api.Middlewares;
-using Serilog;
-
-namespace SearchOn.Api.Startup;
+﻿namespace SearchOn.Api.Startup;
 
 public static class Middlewares
 {
@@ -14,6 +11,8 @@ public static class Middlewares
         }
 
         app.UseHttpsRedirection();
+
+        app.UseRouting();
 
         app.UseAuthorization();
 
