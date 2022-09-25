@@ -9,5 +9,7 @@ public static class Services
         services.AddEndpointsApiExplorer();
 
         services.AddSwaggerGen();
+
+        services.AddSearchService();
     }
 }
