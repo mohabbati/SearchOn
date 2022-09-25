@@ -28,6 +28,9 @@ public class SearchService
         if (_dataFile is null)
             throw new LogicException("There is no data to search. At the first load data.");
 
+        if (string.IsNullOrWhiteSpace(criteria))
+            throw new LogicException(nameof(criteria)); 
+        
         var indexBuildingLock = _buildingLockSearch.Index(_dataFile);
         var indexBuilding = _buildingSearch.Index(_dataFile);
         var indexGroupMeduim = _groupMediumSearch.Index(_dataFile);
